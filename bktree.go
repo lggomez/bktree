@@ -46,13 +46,8 @@ func (n *node) ContainsKey(key int) bool {
 	if n.Children == nil {
 		return false
 	}
-	for k := range n.Children {
-		if k == key {
-			return true
-		}
-
-	}
-	return false
+	_, ok := n.Children[key]
+	return ok
 }
 
 type Tree struct {
